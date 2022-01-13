@@ -1,0 +1,27 @@
+:host {
+  width: 100%;
+}
+
+.portraid {
+  display: flex;
+  height: 100%;
+  cursor: pointer;
+  & img {
+    height: 100%;
+  }
+
+  & mat-card-content > p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.landscape {
+  & mat-card-title-group {
+    flex-direction: row-reverse;
+    justify-content: start;
+
+  }
+  margin-bottom: 8px;
+}

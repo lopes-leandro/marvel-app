@@ -1,0 +1,9 @@
+<ng-container *ngIf="heroes$ | async as heroes; else Loader">
+    <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+        <app-view-card fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33.33%" *ngFor="let hero of heroes; trackBy: trackByFn" [card]="hero"
+            [navigate]="'/heroes/heroes-detail'"></app-view-card>
+    </div>
+</ng-container>
+<ng-template #Loader>
+    <mat-spinner></mat-spinner>
+</ng-template>

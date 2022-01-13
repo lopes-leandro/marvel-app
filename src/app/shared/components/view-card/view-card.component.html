@@ -1,0 +1,25 @@
+<mat-card class="portraid" fxLayout="column" (click)="cardClicked()" *ngIf="rotation === 'portrait'; else landscape">
+    <img mat-card-image src="{{card?.urlImagem}}" alt="">
+    <mat-card-content>
+        <h3>{{card?.title}}</h3>
+        <p *ngIf="card?.description">{{card?.description}}</p>
+        <p *ngIf="!card?.description">Sem informação</p>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions align="end">
+        <button mat-button [disabled]="!navigateUrl">Ver detalhes</button>
+    </mat-card-actions>
+</mat-card>
+
+<ng-template #landscape>
+    <mat-card >
+        <mat-card-title-group>
+            <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            <mat-card-title>Título</mat-card-title>
+            <mat-card-subtitle>Subtítulo</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>
+            descrição
+        </mat-card-content>
+    </mat-card>
+</ng-template>
